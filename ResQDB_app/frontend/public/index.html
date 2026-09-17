@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResQDB — Relief Operations Console</title>
+<link rel="stylesheet" href="./bundle.css">
+<script>
+  // Point the frontend at your backend API.
+  // Local dev: leave this as-is.
+  // Production: change this ONE line to your deployed backend's public URL,
+  // e.g. "https://resqdb-backend.up.railway.app/api" — no rebuild needed,
+  // since this file is loaded as plain HTML, not bundled by esbuild.
+  window.__RESQDB_API_BASE__ = "http://localhost:4000/api";
+</script>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="./bundle.js"></script>
+</body>
+</html>
