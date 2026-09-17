@@ -1,0 +1,90 @@
+ResQDB Application Startup Instructions
+=======================================
+
+After shutting down and restarting your computer, follow these steps.
+
+1. Start MySQL
+---------------
+
+If you use XAMPP or WAMP, open it and start MySQL.
+
+If MySQL is installed as a Windows service, open PowerShell and run:
+
+    Get-Service *mysql*
+
+Start the service name shown. For example:
+
+    Start-Service MySQL80
+
+You do not need to import the SQL files again. The database remains saved in MySQL.
+
+2. Start the Backend
+--------------------
+
+Open a new terminal and run:
+
+    cd "E:/UIU_Academic_resource/All courses/6th_Trimester/DBMS Lab/Project/v4/resqdb_app/resqdb_app/backend"
+    npm start
+
+Leave this terminal open.
+
+The expected message is:
+
+    ResQDB backend listening on http://localhost:4000
+
+Test the backend from another terminal:
+
+    curl.exe http://localhost:4000/api/health
+
+Expected result:
+
+    {"ok":true,"service":"resqdb-backend"}
+
+3. Start the Frontend
+---------------------
+
+Open another terminal and run:
+
+    cd "E:/UIU_Academic_resource/All courses/6th_Trimester/DBMS Lab/Project/v4/resqdb_app/resqdb_app/frontend/dist"
+    py -m http.server 5173
+
+If the py command does not work, use:
+
+    python -m http.server 5173
+
+Do not use python3 in the current Git Bash terminal.
+
+Leave this terminal open.
+
+4. Open the Application
+-----------------------
+
+Open this address in your browser:
+
+    http://localhost:5173
+
+The application requires these three services to be running:
+
+    MySQL       Database service
+    Port 4000   Node.js backend API
+    Port 5173   Frontend web server
+
+If You See EADDRINUSE
+---------------------
+
+EADDRINUSE means that the service is already running on that port. Do not start
+another copy.
+
+Check the backend with:
+
+    curl.exe http://localhost:4000/api/health
+
+If it returns the JSON health response, the backend is working.
+
+Stopping the Application
+------------------------
+
+In each terminal running a server, press Ctrl+C.
+
+Stop the frontend server and backend server when finished. MySQL can remain
+running if you plan to use the application again soon.

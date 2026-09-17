@@ -1,0 +1,22 @@
+{
+  "name": "resqdb-backend",
+  "version": "1.0.0",
+  "description": "REST API for ResQDB — Flood & Cyclone Emergency Relief Management System",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:import": "node scripts/import-db.js",
+    "db:import:sample": "node scripts/import-db.js --with-sample-data",
+    "hash-password": "node scripts/hash-password.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3"
+  }
+}

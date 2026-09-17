@@ -1,0 +1,16 @@
+{
+  "name": "resqdb-frontend",
+  "version": "1.0.0",
+  "description": "React operations console for ResQDB",
+  "scripts": {
+    "build": "esbuild src/main.jsx --bundle --jsx=automatic --outfile=dist/bundle.js --loader:.js=jsx",
+    "watch": "esbuild src/main.jsx --bundle --jsx=automatic --outfile=dist/bundle.js --loader:.js=jsx --watch"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  }
+}
